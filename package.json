@@ -1,0 +1,43 @@
+{
+  "name": "twinbench",
+  "productName": "TwinBench",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "dist:win": "vite build && electron-builder --win portable --x64"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "lucide-react": "^0.383.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.10.0",
+    "three": "^0.128.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3",
+    "vite": "^5.1.0"
+  },
+  "build": {
+    "appId": "com.rvce.twinbench",
+    "productName": "TwinBench",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ]
+    }
+  }
+}
